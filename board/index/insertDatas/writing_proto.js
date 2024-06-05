@@ -29,9 +29,8 @@
           withCredentials: true,
         })
       ).data;
-      if (data2.userinfo.userinfo[0])
-        writingUserInfo.username = data2.userinfo.userinfo[0].nick;
-      if (data2.userinfo.userinfo[0]) writingUserInfo.userExists = true;
+      if (data2.userinfo[0]) writingUserInfo.username = data2.userinfo[0].nick;
+      if (data2.userinfo[0]) writingUserInfo.userExists = true;
       else {
         writingUserInfo.username = "";
         writingUserInfo.userExists = false;
@@ -126,21 +125,16 @@
           document.getElementById("categorySelectBox").appendChild(temp);
           boardWritingContent.categoryList.forEach((item) => {
             temp.innerHTML += `
-  <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${
-              item.name
-            }</option>
+  <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${item.name}</option>
 `;
           });
           // 이미지는 포기하자. 구현하기엔 시간이 없다.
           (async () => {
-            editorInstance = await ClassicEditor.create(
-              document.getElementById("ckeditorBox"),
-              {
-                language: "ko",
-                placeholder: boardWritingContent.placeholder,
-                removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"],
-              }
-            );
+            editorInstance = await ClassicEditor.create(document.getElementById("ckeditorBox"), {
+              language: "ko",
+              placeholder: boardWritingContent.placeholder,
+              removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"],
+            });
 
             editorInstance.setData(`<p>${boardContent}</p>`);
           })();
@@ -187,7 +181,7 @@
           data: { channel: "" },
           withCredentials: true,
         })
-      ).data.userInfo;
+      ).data;
       if (data2.userinfo[0]) writingUserInfo.username = data2.userinfo[0].nick;
       if (data2.userinfo[0]) writingUserInfo.userExists = true;
     } catch (err) {
@@ -275,21 +269,16 @@
           document.getElementById("categorySelectBox").appendChild(temp);
           boardWritingContent.categoryList.forEach((item) => {
             temp.innerHTML += `
-    <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${
-              item.name
-            }</option>
+    <option value="${item.value}" ${item.selected ? 'selected=""' : ""}>${item.name}</option>
   `;
           });
           // 이미지는 포기하자. 구현하기엔 시간이 없다.
           (async () => {
-            editorInstance = await ClassicEditor.create(
-              document.getElementById("ckeditorBox"),
-              {
-                language: "ko",
-                placeholder: boardWritingContent.placeholder,
-                removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"],
-              }
-            );
+            editorInstance = await ClassicEditor.create(document.getElementById("ckeditorBox"), {
+              language: "ko",
+              placeholder: boardWritingContent.placeholder,
+              removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"],
+            });
           })();
           document.getElementById("boardWritingButton").onclick = (e) => {
             if (editorInstance.getData() == "") {

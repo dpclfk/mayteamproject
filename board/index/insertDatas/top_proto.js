@@ -49,16 +49,10 @@
     primarychannelList = [];
 
     for (let item of data) {
-      subscribechannelList.push([
-        `${clientAddress}?channel=${item.engTitle}`,
-        item.title,
-      ]);
+      subscribechannelList.push([`${clientAddress}?channel=${item.engTitle}`, item.title]);
     }
     for (let item of data) {
-      primarychannelList.push([
-        `${clientAddress}?channel=${item.engTitle}`,
-        item.title,
-      ]);
+      primarychannelList.push([`${clientAddress}?channel=${item.engTitle}`, item.title]);
     }
     subscribechannelList.push([`${clientAddress}/admin`, "관리자 채널"]);
     primarychannelList.push([`${clientAddress}/admin`, "관리자"]);
@@ -93,10 +87,9 @@
     // const top_search_channelSearchBox_loadingBox = document.getElementById(
     //   "top_search_channelSearchBox_loadingBox"
     // );
-    const top_search_channelSearchBox_searchedChannelList =
-      document.getElementById(
-        "top_search_channelSearchBox_searchedChannelList"
-      );
+    const top_search_channelSearchBox_searchedChannelList = document.getElementById(
+      "top_search_channelSearchBox_searchedChannelList"
+    );
 
     searchedChannelList.forEach((item) => {
       top_search_channelSearchBox_searchedChannelList.innerHTML += `
@@ -128,9 +121,9 @@
     );
 
     subscribechannelList.forEach((item, index) => {
-      top_subscribechannel_channelBox.innerHTML += `<div class="channelList"><a href="${
-        item[0]
-      }">${item[1]} 채널<span class="index_box">${index + 1}</span></a></div>`;
+      top_subscribechannel_channelBox.innerHTML += `<div class="channelList"><a href="${item[0]}">${
+        item[1]
+      } 채널<span class="index_box">${index + 1}</span></a></div>`;
     });
 
     // notification_insert
@@ -147,9 +140,7 @@
   </div>
 </div>`;
 
-    const top_notification_box_messages = document.getElementById(
-      "top_notification_box_messages"
-    );
+    const top_notification_box_messages = document.getElementById("top_notification_box_messages");
 
     notificationMessages.forEach((item) => {
       top_notification_box_messages.innerHTML += `<div class="newLink"><a href="${item[0]}">${item[1]}님의 새 개념글 : ${item[2]}</a></div>`;
@@ -180,9 +171,7 @@
 </div>
 `;
 
-    const top_primarychannel_channelBox = document.getElementById(
-      "top_primarychannel_channelBox"
-    );
+    const top_primarychannel_channelBox = document.getElementById("top_primarychannel_channelBox");
 
     const top_primary_channelList = document.createElement("div");
     top_primary_channelList.className = "channelAreaLiner";
@@ -193,19 +182,14 @@
     });
     top_primarychannel_channelBox.innerHTML += `<div class="channelList"><a href="${userPrimaryRoot}">더보기</a></div>`;
     // search_function
-    const subTopSearchBox_input = document.getElementById(
-      "subTopSearchBox_input"
-    );
+    const subTopSearchBox_input = document.getElementById("subTopSearchBox_input");
     const subTopSearchBox = document.getElementById("subTopSearchBox");
     const top_search_input = document.getElementById("top_search_input");
-    const top_search_channelSearchBox = document.getElementById(
-      "top_search_channelSearchBox"
-    );
+    const top_search_channelSearchBox = document.getElementById("top_search_channelSearchBox");
 
-    const top_search_channelSearchBox_channelSearchButtonLine =
-      document.getElementById(
-        "top_search_channelSearchBox_channelSearchButtonLine"
-      );
+    const top_search_channelSearchBox_channelSearchButtonLine = document.getElementById(
+      "top_search_channelSearchBox_channelSearchButtonLine"
+    );
 
     top_search_input.onclick = (e) => {
       top_userInfoBox.classList.add("out");
@@ -242,13 +226,12 @@
       else top_search_channelSearchBox.classList.add("out");
     };
 
-    document.getElementById("top_search_channelSearchCloseButton").onclick =
-      () => {
-        top_userInfoBox.classList.add("out");
-        top_primarychannel_channelBox.classList.add("out");
-        top_subscribechannel_channelBox.classList.add("out");
-        top_search_channelSearchBox.classList.add("out");
-      };
+    document.getElementById("top_search_channelSearchCloseButton").onclick = () => {
+      top_userInfoBox.classList.add("out");
+      top_primarychannel_channelBox.classList.add("out");
+      top_subscribechannel_channelBox.classList.add("out");
+      top_search_channelSearchBox.classList.add("out");
+    };
     document.getElementById("top_subTopSearchBox_button").onclick = () => {
       top_primarychannel_channelBox.classList.add("out");
       top_subscribechannel_channelBox.classList.add("out");
@@ -267,9 +250,7 @@
 
     // notification_function
 
-    const top_notification_box = document.getElementById(
-      "top_notification_box"
-    );
+    const top_notification_box = document.getElementById("top_notification_box");
 
     document.getElementById("top_notification_button").onclick = (e) => {
       e.preventDefault();
@@ -279,9 +260,7 @@
       top_notification_box.classList.toggle("out");
     };
 
-    document.getElementById("top_notification_readAll_button").onclick = (
-      e
-    ) => {
+    document.getElementById("top_notification_readAll_button").onclick = (e) => {
       e.preventDefault();
       top_notification_box_messages.childNodes.forEach((item) => {
         item.className = "newLink grey";
@@ -320,8 +299,8 @@
         withCredentials: true,
       })
     ).data;
-    if (data.userinfo.userinfo[0]) username = data.userinfo.userinfo[0].nick;
-    if (data.userinfo.userinfo[0]) userExists = true;
+    if (data.userinfo[0]) username = data.userinfo[0].nick;
+    if (data.userinfo[0]) userExists = true;
   } catch (err) {
     username = "";
     userExists = false;
@@ -329,9 +308,7 @@
     document.getElementById("top_login").innerHTML = `
     <div class="loginIconBox" title="Member menu" id="top_userInfoBoxButton">
       <span class="userName-login">${username}</span>
-      <a class="personLogin-icon" ${
-        !userExists ? `href="${userIconHref}"` : ""
-      }>
+      <a class="personLogin-icon" ${!userExists ? `href="${userIconHref}"` : ""}>
         <div class="person-img"><img src="./../imgs/person.png"></div>
       </a>
     </div>
@@ -393,9 +370,7 @@
       curtain.classList.add("out");
     };
 
-    document.getElementById("top_userInfoBox_logout_button").onclick = async (
-      e
-    ) => {
+    document.getElementById("top_userInfoBox_logout_button").onclick = async (e) => {
       try {
         e.preventDefault();
         await axios({

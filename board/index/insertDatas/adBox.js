@@ -1,12 +1,13 @@
-{/* <a href="/">
+{
+  /* <a href="/">
 <div class="adImg"><img src="./../imgs/maxresdefault.jpg" /></div>                    </a>
 <a href="/">
 <div class="adImg"><img src="./../imgs/img2.gif" /></div>
-</a> */}
+</a> */
+}
 
 if (document.getElementById("upDownSlide")) {
-    document.getElementById("upDownSlide").innerHTML =
-        `
+  document.getElementById("upDownSlide").innerHTML = `
 <div class="divideAd adOne">
   <div class="adImgBox">
     <a href="/">
@@ -166,12 +167,11 @@ if (document.getElementById("upDownSlide")) {
       <div class="adImg"><img src="./../imgs/img2.gif" /></div>
     </a>
   </div>
-</div>`
+</div>`;
 }
 
 if (document.getElementById("basicSlide")) {
-    document.getElementById("basicSlide").innerHTML =
-        `
+  document.getElementById("basicSlide").innerHTML = `
 <div class="basicSlide" id="basicSlide">
 <div class="adImgBox">
   <a href="/"><img src="./../imgs/maxresdefault.jpg" /></a>
@@ -182,19 +182,18 @@ if (document.getElementById("basicSlide")) {
 }
 
 if (document.getElementById("left_ad")) {
-    document.getElementById("left_ad").innerHTML =
-        `
+  document.getElementById("left_ad").innerHTML = `
 <a href="/"><img src="./../imgs/maxresdefault.jpg" /></a>
 `;
 }
 
 if (document.getElementById("adBoxCenter")) {
-    document.getElementById("adBoxCenter").innerHTML = `
+  document.getElementById("adBoxCenter").innerHTML = `
 
 <a href="/">
   <div class="imgWrapper">
     <img src="./../imgs/maxresdefault.jpg" />
   </div>
 </a>
-`
+`;
 }

@@ -3,9 +3,7 @@ const shortCutHelpBox = document.getElementById("shortCutHelpBox");
 const viewConfigBox = document.getElementById("viewConfigBox");
 const curtain = document.getElementById("curtain");
 
-const bottom_convenience_buttons = document.getElementById(
-  "bottom_convenience_buttons"
-);
+const bottom_convenience_buttons = document.getElementById("bottom_convenience_buttons");
 
 shortCutHelpBox.innerHTML = `
 <div class="boxTop">
@@ -240,12 +238,8 @@ viewConfigBox.innerHTML = `
   </div>
 </div>`;
 
-const viewConfigBox_typeSelect = document.getElementById(
-  "viewConfigBox_typeSelect"
-);
-const viewConfigBox_contents = document.getElementById(
-  "viewConfigBox_contents"
-);
+const viewConfigBox_typeSelect = document.getElementById("viewConfigBox_typeSelect");
+const viewConfigBox_contents = document.getElementById("viewConfigBox_contents");
 const viewConfigBox_general = document.getElementById("viewConfigBox_general");
 
 bottom_convenience_buttons.innerHTML = `
@@ -278,16 +272,12 @@ document.getElementById("viewConfigBox_closeButton").onclick = (e) => {
 
 document.getElementById("viewConfigBox_typeSelect").onclick = (e) => {
   if (e.target.innerText == "일반") {
-    [...viewConfigBox_typeSelect.childNodes].forEach(
-      (item) => (item.className = "")
-    );
+    [...viewConfigBox_typeSelect.childNodes].forEach((item) => (item.className = ""));
     e.target.className = "selected";
     viewConfigBox_contents.classList.add("out");
     viewConfigBox_general.classList.remove("out");
   } else if (e.target.innerText == "컨텐츠") {
-    [...viewConfigBox_typeSelect.childNodes].forEach(
-      (item) => (item.className = "")
-    );
+    [...viewConfigBox_typeSelect.childNodes].forEach((item) => (item.className = ""));
     e.target.className = "selected";
     viewConfigBox_general.classList.add("out");
     viewConfigBox_contents.classList.remove("out");

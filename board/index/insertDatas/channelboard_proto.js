@@ -91,9 +91,8 @@
         withCredentials: true,
       })
     ).data;
-    if (data2.userinfo.userinfo[0])
-      boardContent.username = data2.userinfo.userinfo[0].nick;
-    if (data2.userinfo.userinfo[0]) boardContent.userExists = true;
+    if (data2.userinfo[0]) boardContent.username = data2.userinfo[0].nick;
+    if (data2.userinfo[0]) boardContent.userExists = true;
     else {
       boardContent.username = "";
       boardContent.userExists = false;
@@ -135,8 +134,7 @@
         boardContent.unrecommend = data.view.dislikeCount;
         boardContent.looks = data.view.viewPoint;
         boardContent.content = data.view.contents;
-        boardContent.channelCommentPlaceHolder =
-          data.channel.commentPlaceholder;
+        boardContent.channelCommentPlaceHolder = data.channel.commentPlaceholder;
         let date = new Date(data.view.createdAt);
         boardContent.boardHref = `${clientAddress}/board?boardId=${data.view.id}&channel=${data.channel.engTitle}&category=${data.view.Category.engTitle}&page=${page}`;
         boardContent.createdAt = `${date.getFullYear()}.${
@@ -170,9 +168,7 @@
       } finally {
         // boardContentBox_data_insert
         document.getElementById("boardContentBox").innerHTML = `
-          <div class="writerFunctionBox ${
-            boardContent["isWriter"] ? "" : "out"
-          }">
+          <div class="writerFunctionBox ${boardContent["isWriter"] ? "" : "out"}">
           <a id="boardDeleteButton">
           <button class="writerFunctionButton first">
           <div class="imgIcon"><img src="./../imgs/trash.svg"></img></div>삭제
@@ -190,9 +186,9 @@
           </a>
           </div>
           <div class="title">
-            <div class="titleContent"><span class="${
-              boardContent.blackBox ? "blackBox" : ""
-            }">${boardContent.blackBox}</span>
+            <div class="titleContent"><span class="${boardContent.blackBox ? "blackBox" : ""}">${
+          boardContent.blackBox
+        }</span>
               ${boardContent.title}
             </div>
             <div class="titleEtc">
@@ -205,14 +201,8 @@
                         ? "blueCheckIcon"
                         : "orangeCheckIcon"
                       : ""
-                  } ${
-          boardContent["isAdmin"] ? "" : "greyCheckIcon"
-        } checkIcon imgIcon" title="${
-          boardContent["isAdmin"]
-            ? boardContent["isSub"]
-              ? "부관리자"
-              : "주관리자"
-            : ""
+                  } ${boardContent["isAdmin"] ? "" : "greyCheckIcon"} checkIcon imgIcon" title="${
+          boardContent["isAdmin"] ? (boardContent["isSub"] ? "부관리자" : "주관리자") : ""
         }
                     ${boardContent["isAdmin"] ? "" : "사용자"}">
                     <img src="./../imgs/checkmark-outline.svg" /></div>
@@ -239,9 +229,9 @@
               </div>
             </div>
           </div>
-          <div class="linkSite"><a href="${
-            boardContent.boardHref
-          }"><span class="sharingLink">${boardContent.boardHref}</span>
+          <div class="linkSite"><a href="${boardContent.boardHref}"><span class="sharingLink">${
+          boardContent.boardHref
+        }</span>
               <div class="sharingIcon imgIcon">
                 <img src="./../imgs/share-social-sharp.svg">
               </div>
@@ -257,9 +247,7 @@
           <!-- js에서 처리해줘야하는 목록 -->
           <div class="recommendButtonLine">
             <button type="button" class="recommendButton" id="boardRecommendButton">
-              <div class="textLine">추천!<span class="count"> ${
-                boardContent.recommend
-              }</span></div>
+              <div class="textLine">추천!<span class="count"> ${boardContent.recommend}</span></div>
               <small class="imgLine"><span>(</span>
                 <div class="imgIcon"><img src="../imgs/help-outline.svg"></div><span class="recommendCount">0</span><span>)</span>
               </small>
@@ -303,9 +291,7 @@
 
         // commentBoardListBox_data_insert
 
-        const commentBoardListBox = document.getElementById(
-          "commentBoardListBox"
-        );
+        const commentBoardListBox = document.getElementById("commentBoardListBox");
 
         (() => {
           const idStack = [];
@@ -323,9 +309,7 @@
                               ? "blueCheckIcon"
                               : "orangeCheckIcon"
                             : ""
-                        } ${
-              item["isAdmin"] ? "" : "greyCheckIcon"
-            } checkIcon imgIcon" title="${
+                        } ${item["isAdmin"] ? "" : "greyCheckIcon"} checkIcon imgIcon" title="${
               item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
             }
                           ${item["isAdmin"] ? "" : "사용자"}">
@@ -375,14 +359,12 @@
                 </div>
               </div>
               <div class="commentBoard_content">
-                <span class="remake_inform">${
-                  item["isUpdated"] ? "*수정됨" : ""
-                }</span>${item["content"]}
+                <span class="remake_inform">${item["isUpdated"] ? "*수정됨" : ""}</span>${
+              item["content"]
+            }
               </div>
             </div>
-            <div class="commentWritingBox commentUpdateBox out" id="commentUpdateBox${
-              item.id
-            }">
+            <div class="commentWritingBox commentUpdateBox out" id="commentUpdateBox${item.id}">
               <div class="commentWritingBox_top">
                 <div class="commentWritingBox_leftLine">
                   <div class="titleText">댓글 수정</div>
@@ -415,9 +397,7 @@
             }"></textarea>
               </div>
             </div>
-            <div class="replyCommentBoardListBox" id="replyCommentBoardListBox${
-              item.id
-            }">
+            <div class="replyCommentBoardListBox" id="replyCommentBoardListBox${item.id}">
               <div class="commentWritingBox commentReplyWritingBox out" id="commentReplyWritingBox${
                 item.id
               }">
@@ -494,9 +474,7 @@
         //구현 포기
 
         commentBoardListBox.innerHTML += `
-          <div class="commentWritingBox basic ${
-            boardContent.userExists ? "" : "out"
-          }">
+          <div class="commentWritingBox basic ${boardContent.userExists ? "" : "out"}">
           <div class="commentWritingBox_top">
             <div class="commentWritingBox_leftLine">
               <div class="titleText">댓글 작성</div>
@@ -549,16 +527,12 @@
           try {
             if (e.target.id.search(/updateButton/) == 0) {
               document
-                .getElementById(
-                  `commentUpdateBox${e.target.id.split("updateButton")[1]}`
-                )
+                .getElementById(`commentUpdateBox${e.target.id.split("updateButton")[1]}`)
                 .classList.toggle("out");
             }
             if (e.target.id.search(/replyButton/) == 0) {
               document
-                .getElementById(
-                  `commentReplyWritingBox${e.target.id.split("replyButton")[1]}`
-                )
+                .getElementById(`commentReplyWritingBox${e.target.id.split("replyButton")[1]}`)
                 .classList.toggle("out");
             }
             if (e.target.id.search(/deleteButton/) == 0) {
@@ -582,15 +556,11 @@
                 url: `${reqHostPort}/b/view/modify`,
                 data: {
                   contents: document.getElementById(
-                    `update_commentContent${
-                      e.target.id.split("update_commitButton")[1]
-                    }`
+                    `update_commentContent${e.target.id.split("update_commitButton")[1]}`
                   ).value,
                 },
                 params: {
-                  commeentId: Number(
-                    e.target.id.split("update_commitButton")[1]
-                  ),
+                  commeentId: Number(e.target.id.split("update_commitButton")[1]),
                 },
               });
               alert("댓글을 수정했습니다!");
@@ -602,9 +572,7 @@
                 url: `${reqHostPort}/b/view/add`,
                 data: {
                   contents: document.getElementById(
-                    `reply_commentContent${
-                      e.target.id.split("reply_commitButton")[1]
-                    }`
+                    `reply_commentContent${e.target.id.split("reply_commitButton")[1]}`
                   ).value,
                 },
                 params: {

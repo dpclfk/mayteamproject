@@ -78,11 +78,7 @@
         params: { page: page },
       })
     ).data;
-    categoryList.push([
-      `${clientAddress}?channel=${channel}`,
-      "전체",
-      category == "",
-    ]);
+    categoryList.push([`${clientAddress}?channel=${channel}`, "전체", category == ""]);
     let data = (
       await axios({
         method: "post",
@@ -114,19 +110,15 @@
       let date = new Date(item.createdAt);
       if (Array.isArray(data2.category)) {
         data2.category.forEach((searchId) => {
-          if (searchId.id == item.categoryId)
-            boardCategoryName = searchId.engTitle;
+          if (searchId.id == item.categoryId) boardCategoryName = searchId.engTitle;
           // console.log(searchId.engTitle);
         });
       } else {
-        boardCategoryName =
-          data2.category.id == item.categoryId ? data2.category.engTitle : "";
+        boardCategoryName = data2.category.id == item.categoryId ? data2.category.engTitle : "";
       }
       let boardObject = {
         href: `${clientAddress}/board?boardId=${item.id}&channel=${channel}&category=${boardCategoryName}&page=${page}`,
-        created_at: `${date.getFullYear()}.${
-          date.getMonth() + 1
-        }.${date.getDate()}`,
+        created_at: `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`,
         number: item.id,
         blackBox: "",
         title: item.title,
@@ -155,9 +147,7 @@
     console.log(err);
   } finally {
     // recentChannelList_insert
-    const recentChannelListBox = document.getElementById(
-      "recentChannelListBox"
-    );
+    const recentChannelListBox = document.getElementById("recentChannelListBox");
     recentChannelListBox.innerHTML = `
 <div class="title">최근<span> 방문 채널</span></div>
 `;
@@ -173,9 +163,7 @@
 
     categoryList.forEach((item) => {
       categoryListBox.innerHTML += `
-    <div class="category ${!item[2] || "selected"}"><a href="${item[0]}" >${
-        item[1]
-      }</a></div>
+    <div class="category ${!item[2] || "selected"}"><a href="${item[0]}" >${item[1]}</a></div>
   
   `;
     });
@@ -190,8 +178,7 @@
         //   categoryListBox.style.left =
         //     categoryBoxWrapper.clientWidth - categoryListBox.clientWidth;
         // } else
-        categoryListBox.style.left =
-          initialLeft - (initialLocationX - e.clientX);
+        categoryListBox.style.left = initialLeft - (initialLocationX - e.clientX);
       };
       // 보류
     };
@@ -279,9 +266,7 @@
     <div class="titleColumn">
       <dlv class="titleContent">
         <div class="textWrapper">
-          <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-        item["blackBox"]
-      }</div>
+          <div class="blackBox ${item["blackBox"] == "" && "out"}">${item["blackBox"]}</div>
           <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
@@ -320,9 +305,7 @@
     <div class="titleColumn">
       <dlv class="titleContent">
         <div class="textWrapper">
-          <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-          item["blackBox"]
-        }</div>
+          <div class="blackBox ${item["blackBox"] == "" && "out"}">${item["blackBox"]}</div>
           <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
           <div class="text">
           ${item["title"]}
@@ -367,9 +350,7 @@
       <div class="titleColumn">
         <dlv class="titleContent">
           <div class="textWrapper">
-            <div class="blackBox ${item["blackBox"] == "" && "out"}">${
-        item["blackBox"]
-      }</div>
+            <div class="blackBox ${item["blackBox"] == "" && "out"}">${item["blackBox"]}</div>
             <!-- <div class="previewIcon imgIcon"><img src="./../imgs/copy-outline.svg" /></div> --!>
             <div class="text">
             ${item["title"]}
@@ -383,11 +364,7 @@
       <div class="writerColumn left_position">
         <div class="text">${item["writer"]}</div>
         <div class="${
-          item["isAdmin"]
-            ? item["isSub"]
-              ? "blueCheckIcon"
-              : "orangeCheckIcon"
-            : ""
+          item["isAdmin"] ? (item["isSub"] ? "blueCheckIcon" : "orangeCheckIcon") : ""
         } ${item["isAdmin"] ? "" : "greyCheckIcon"} checkIcon imgIcon" title="${
         item["isAdmin"] ? (item["isSub"] ? "부관리자" : "주관리자") : ""
       }
@@ -428,33 +405,25 @@
       `;
 
       while (page - count > 0 && count < 5) {
-        temp = `<a href="/?page=${
-          page - count
-        }&category=${category}&channel=${channel}">
+        temp = `<a href="/?page=${page - count}&category=${category}&channel=${channel}">
         <div class="pageBox">${page - count}</div>
         </a>`.concat(temp);
         count++;
       }
       if (page - count > 0) {
-        temp = `<a href="/?page=${
-          page - count
-        }&category=${category}&channel=${channel}">
+        temp = `<a href="/?page=${page - count}&category=${category}&channel=${channel}">
         <div class="pageBox">  <div class="imgIcon"><img src="./../imgs/chevron-back-outline.svg" /></div></div>
         </a>`.concat(temp);
       }
 
       while (pageCount + count < 11) {
-        temp += `<a href="/?page=${
-          page + pageCount
-        }&category=${category}&channel=${channel}">
+        temp += `<a href="/?page=${page + pageCount}&category=${category}&channel=${channel}">
       <div class="pageBox">${page + pageCount}</div>
       </a>`;
         pageCount++;
       }
 
-      temp += `<a href="/?page=${
-        page + 1
-      }&category=${category}&channel=${channel}">
+      temp += `<a href="/?page=${page + 1}&category=${category}&channel=${channel}">
   <div class="pageBox">
     <div class="imgIcon">
       <img src="./../imgs/chevron-forward-outline.svg" />
@@ -523,9 +492,7 @@ max="${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
           boardTableBox.childNodes.forEach((item) => {
             item.classList = "";
           });
-          document
-            .getElementById("boardInformStretchButton")
-            .classList.add("out");
+          document.getElementById("boardInformStretchButton").classList.add("out");
         })
       : true;
   }

@@ -66,29 +66,11 @@
   color: black;
 }
 #container .body .bodyCenter .informBox .boardBox .content ul a:hover,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a:hover {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a:hover {
   text-decoration: underline;
 }
 #container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   font-size: 0.9rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
@@ -98,17 +80,7 @@
 #container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle {
   width: 70%;
 }
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   width: 100%;
 }
 #container .body .bodyCenter .informBox .boardBox .content ul a li .timeBox {

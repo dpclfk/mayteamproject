@@ -45,11 +45,8 @@ document.getElementById("insertChannel_submit").onclick = (e) => {
     return;
   }
   if (
-    document.forms["insertChannel"].title.value.search(paranoidRegen_hangul) !=
-      -1 ||
-    document.forms["insertChannel"].engTitle.value.search(
-      paranoidRegen_english
-    ) != -1
+    document.forms["insertChannel"].title.value.search(paranoidRegen_hangul) != -1 ||
+    document.forms["insertChannel"].engTitle.value.search(paranoidRegen_english) != -1
   ) {
     alert("잘못된 입력값을 넣으셨습니다!");
     return;
@@ -62,8 +59,7 @@ document.getElementById("insertChannel_submit").onclick = (e) => {
       title: document.forms["insertChannel"].title.value,
       engTitle: document.forms["insertChannel"].engTitle.value,
       writePlaceholder: document.forms["insertChannel"].writePlaceholder.value,
-      commentPlaceholder:
-        document.forms["insertChannel"].commentPlaceholder.value,
+      commentPlaceholder: document.forms["insertChannel"].commentPlaceholder.value,
       description: document.forms["insertChannel"].description.value,
     },
     withCredentials: true,
@@ -95,11 +91,8 @@ document.getElementById("updateChannel_submit").onclick = (e) => {
     return;
   }
   if (
-    document.forms["updateChannel"].title.value.search(paranoidRegen_hangul) !=
-      -1 ||
-    document.forms["updateChannel"].engTitle.value.search(
-      paranoidRegen_english
-    ) != -1
+    document.forms["updateChannel"].title.value.search(paranoidRegen_hangul) != -1 ||
+    document.forms["updateChannel"].engTitle.value.search(paranoidRegen_english) != -1
   ) {
     alert("잘못된 입력값을 넣으셨습니다!");
     return;
@@ -112,8 +105,7 @@ document.getElementById("updateChannel_submit").onclick = (e) => {
       title: document.forms["updateChannel"].title.value,
       engTitle: document.forms["updateChannel"].engTitle.value,
       writePlaceholder: document.forms["updateChannel"].writePlaceholder.value,
-      commentPlaceholder:
-        document.forms["updateChannel"].commentPlaceholder.value,
+      commentPlaceholder: document.forms["updateChannel"].commentPlaceholder.value,
       description: document.forms["updateChannel"].description.value,
     },
     withCredentials: true,
@@ -173,11 +165,8 @@ document.getElementById("insertCategory_submit").onclick = (e) => {
     return;
   }
   if (
-    document.forms["insertCategory"].name.value.search(paranoidRegen_hangul) !=
-      -1 ||
-    document.forms["insertCategory"].engTitle.value.search(
-      paranoidRegen_english
-    ) != -1
+    document.forms["insertCategory"].name.value.search(paranoidRegen_hangul) != -1 ||
+    document.forms["insertCategory"].engTitle.value.search(paranoidRegen_english) != -1
   ) {
     alert("잘못된 입력값을 넣으셨습니다!");
     return;
@@ -220,11 +209,8 @@ document.getElementById("updateCategory_submit").onclick = (e) => {
     return;
   }
   if (
-    document.forms["updateCategory"].name.value.search(paranoidRegen_hangul) !=
-      -1 ||
-    document.forms["updateCategory"].category.value.search(
-      paranoidRegen_english
-    ) != -1
+    document.forms["updateCategory"].name.value.search(paranoidRegen_hangul) != -1 ||
+    document.forms["updateCategory"].category.value.search(paranoidRegen_english) != -1
   ) {
     alert("잘못된 입력값을 넣으셨습니다!");
     return;
@@ -263,11 +249,7 @@ document.getElementById("deleteCategory_submit").onclick = (e) => {
     alert("카테고리의 영문명이 비었습니다!");
     return;
   }
-  if (
-    document.forms["deleteCategory"].category.value.search(
-      paranoidRegen_english
-    ) != -1
-  ) {
+  if (document.forms["deleteCategory"].category.value.search(paranoidRegen_english) != -1) {
     alert("잘못된 입력값을 넣으셨습니다!");
     return;
   }

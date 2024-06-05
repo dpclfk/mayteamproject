@@ -59,13 +59,7 @@
   margin-left: 0.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelPathNButtons,
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelPathNButtons,
 #container .body .bodyCenter .bodyContent form .quickButtonsLine {
   display: flex;
   flex-wrap: wrap;
@@ -135,22 +129,8 @@
   .channelPathNButtons
   .channelButtons
   a,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  a,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  a {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons a,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons a {
   height: max-content;
   text-decoration: none;
 }
@@ -164,22 +144,8 @@
   .channelPathNButtons
   .channelButtons
   button,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button {
   display: flex;
   height: 2rem;
   padding: 0.35rem;
@@ -214,37 +180,15 @@
   .channelButtons
   button
   .imgIcon,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button
-  .imgIcon,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button
-  .imgIcon {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button .imgIcon,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button .imgIcon {
   /* display: inline-block; */
   width: 0.8rem;
   height: 0.8rem;
   margin-right: 0.1rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .channelInfoBox
-  .channelInfo
-  .channelDescription {
+#container .body .bodyCenter .bodyContent .channelInfoBox .channelInfo .channelDescription {
   font-size: 0.9rem;
   color: #777;
 }
@@ -371,40 +315,13 @@
   display: flex;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button:hover,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button:hover,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .searchLine_bottom
-  .searchButton:hover {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button:hover,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button:hover,
+#container .body .bodyCenter .bodyContent form .searchLine_bottom .searchButton:hover {
   background-color: #bbb;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  .redBackground {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons .redBackground {
   color: white;
   background-color: #dc3545;
   border: 1px solid #dc3545;
@@ -434,33 +351,12 @@
   filter: invert(1);
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button {
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button {
   width: 4.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  select,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons select,
 #container .body .bodyCenter .bodyContent form .searchLine_bottom select {
   width: 4.5rem;
   height: 2rem;
@@ -477,37 +373,10 @@
   transition: outline 0.3s;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  button:focus,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .left_buttons
-  select:focus,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .quickButtonsLine
-  .right_buttons
-  button:focus,
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .searchLine_bottom
-  .searchButton:focus,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons button:focus,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .left_buttons select:focus,
+#container .body .bodyCenter .bodyContent form .quickButtonsLine .right_buttons button:focus,
+#container .body .bodyCenter .bodyContent form .searchLine_bottom .searchButton:focus,
 #container .body .bodyCenter .bodyContent form .searchLine_bottom select:focus,
 #container .body .bodyCenter .bodyContent form .searchLine_bottom input:focus {
   outline: 0.15rem solid rgba(100, 200, 250, 0.7);
@@ -533,13 +402,7 @@
   padding: 0;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .adBox
-  .imgWrapper {
+#container .body .bodyCenter .bodyContent .boardTableListBox .adBox .imgWrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -547,24 +410,12 @@
   height: 90px;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .adBox
-  .imgWrapper
-  img {
+#container .body .bodyCenter .bodyContent .boardTableListBox .adBox .imgWrapper img {
   width: 100%;
   height: 100%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .recentChannelListWrapper {
+#container .body .bodyCenter .bodyContent .boardTableListBox .recentChannelListWrapper {
   position: relative;
   width: 100%;
   height: 2rem;
@@ -702,24 +553,13 @@
   cursor: pointer;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper {
   height: 2.5rem;
   position: relative;
   overflow: hidden;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper
-  .categoryBox {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper .categoryBox {
   display: flex;
   position: absolute;
   top: 0;
@@ -731,25 +571,12 @@
   border-bottom: 1px solid #bbb;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper
-  .category {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper .category {
   background-color: white;
   padding: 0 1rem;
   font-size: 0.9rem;
 }
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .categoryBoxWrapper
-  .category
-  a {
+#container .body .bodyCenter .bodyContent .boardTableListBox .categoryBoxWrapper .category a {
   display: flex;
   align-items: center;
   height: 100%;
@@ -801,14 +628,7 @@
   text-decoration: none;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  a
-  .boardRow:hover {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox a .boardRow:hover {
   background-color: #eee;
 }
 
@@ -823,13 +643,7 @@
   background-color: unset;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .boardTableListBox
-  .boardTableBox
-  .boardRow {
+#container .body .bodyCenter .bodyContent .boardTableListBox .boardTableBox .boardRow {
   display: flex;
   font-size: 0.9rem;
   min-height: 2.5rem;
@@ -1066,8 +880,7 @@
   .textWrapper
   .imgIcon.starIcon
   img {
-  filter: invert(89%) sepia(32%) saturate(3570%) hue-rotate(355deg)
-    brightness(99%) contrast(92%);
+  filter: invert(89%) sepia(32%) saturate(3570%) hue-rotate(355deg) brightness(99%) contrast(92%);
 }
 
 #container
@@ -1337,13 +1150,7 @@
   transition: outline 0.3s;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  form
-  .searchLine_bottom
-  .searchButton {
+#container .body .bodyCenter .bodyContent form .searchLine_bottom .searchButton {
   padding: 0.35rem;
   background-color: white;
   outline: 0.15rem solid rgba(100, 200, 250, 0);
@@ -1374,25 +1181,12 @@
   max-width: 2.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList.boardCommentPage
-  a {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList.boardCommentPage a {
   min-width: unset;
   max-width: 2.5rem;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox {
   display: flex;
   height: 2.5rem;
   border: 1px solid #bbb;
@@ -1401,60 +1195,24 @@
   align-items: center;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox:hover {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox:hover {
   background-color: #ddd;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a.selected
-  .pageBox {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a.selected .pageBox {
   border: 1px solid #00a495;
   background-color: #ddd;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox.selectedNext {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox.selectedNext {
   border-left: 0;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a:last-of-type
-  .pageBox {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a:last-of-type .pageBox {
   border-right: 1px solid #bbb;
 }
 
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .pageBoxWrapper
-  .pageBoxList
-  a
-  .pageBox
-  .imgIcon {
+#container .body .bodyCenter .bodyContent .pageBoxWrapper .pageBoxList a .pageBox .imgIcon {
   width: 1rem;
   height: 1rem;
 }
@@ -1570,30 +1328,12 @@
 }
 
 #container .body .bodyCenter .informBox .boardBox .content ul a:hover,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a:hover {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a:hover {
   text-decoration: underline;
 }
 
 #container .body .bodyCenter .informBox .boardBox .content ul a li .boardTitle,
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   font-size: 0.9rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
@@ -1605,17 +1345,7 @@
   width: 70%;
 }
 
-#container
-  .body
-  .bodyCenter
-  .informBox
-  .stickyBox
-  .newsBox
-  .content
-  ul
-  a
-  li
-  .boardTitle {
+#container .body .bodyCenter .informBox .stickyBox .newsBox .content ul a li .boardTitle {
   width: 100%;
 }
 

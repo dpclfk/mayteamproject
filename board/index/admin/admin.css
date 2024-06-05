@@ -45,20 +45,10 @@
 #container .body .bodyCenter .bodyContent .textAreaBox.boardPlaceholder {
   padding: 0.5rem;
 }
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .textAreaBox.commentPlaceholder
-  .adminTextArea {
+#container .body .bodyCenter .bodyContent .textAreaBox.commentPlaceholder .adminTextArea {
   min-height: 8rem;
 }
-#container
-  .body
-  .bodyCenter
-  .bodyContent
-  .textAreaBox.description
-  .adminTextArea {
+#container .body .bodyCenter .bodyContent .textAreaBox.description .adminTextArea {
   font-size: 0.9rem;
   min-height: 3rem;
 }

@@ -1,4 +1,4 @@
-const reqHostPort = "http://127.0.0.1:3001";
+const reqHostPort = "/api";
 const clientAddress = "http://localhost";
 let query;
 let cookie = {};
