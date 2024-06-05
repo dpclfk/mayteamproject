@@ -3,11 +3,20 @@ import { Channel, Category } from "../../models/index.js";
 export default async (req, res) => {
   try {
     const reqbody = req.body;
-    const chname = reqbody.channel;
+    let chname = reqbody.channel;
 
-    const channel = await Channel.findOne({
+    if (!chname) {
+      chname = "main";
+    }
+
+    let channel = await Channel.findOne({
       where: { engTitle: chname },
     });
+    if (!channel) {
+      channel = await Channel.findOne({
+        where: { engTitle: "main" },
+      });
+    }
 
     const category = await Category.findAll({
       where: { channelId: channel.id },

@@ -281,7 +281,6 @@
 
 (async () => {
   // 경로(전체), 채널명
-
   let userIconHref = `${clientAddress}/login?channel=${channel}`;
 
   // login_data
@@ -299,6 +298,7 @@
         withCredentials: true,
       })
     ).data;
+    console.log(data);
     if (data.userinfo[0]) username = data.userinfo[0].nick;
     if (data.userinfo[0]) userExists = true;
   } catch (err) {

@@ -99,6 +99,9 @@
       boardContent.isWriter = false;
     }
   } catch (err) {
+    boardContent.username = "";
+    boardContent.userExists = false;
+    boardContent.isWriter = false;
   } finally {
     (async () => {
       try {

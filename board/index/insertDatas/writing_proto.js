@@ -58,6 +58,32 @@
               withCredentials: true,
             })
           ).data;
+          let data3 = (
+            await axios({
+              method: "post",
+              url: `${reqHostPort}/b/category`,
+              data: { channel: channel },
+            })
+          ).data.category;
+          boardWritingContent = {
+            placeholder: data.channel.writePlaceholder,
+            categoryList: [],
+          };
+          if (Array.isArray(data3)) {
+            for (let item of data3) {
+              boardWritingContent.categoryList.push({
+                value: item.engTitle,
+                name: item.name,
+                selected: item.engTitle == category,
+              });
+            }
+          } else {
+            boardWritingContent.categoryList.push({
+              value: data3.engTitle,
+              name: data3.name,
+              selected: data3.engTitle == category,
+            });
+          }
           if (data.view.User.nick != writingUserInfo.username) {
             alert("작성자가 아닙니다!");
             window.location.replace(`${clientAddress}?channel=${channel}`);
@@ -69,17 +95,7 @@
           channelHref_writing = `${clientAddress}?channel=${channel}`;
           channelName_writing = data.channel.title;
           channelDescription_writing = data.channel.description;
-          boardWritingContent = {
-            placeholder: data.channel.writePlaceholder,
-            categoryList: [],
-          };
-          for (let item of data.category) {
-            boardWritingContent.categoryList.push({
-              value: item.engTitle,
-              name: item.name,
-              selected: item.engTitle == category,
-            });
-          }
+
           boardContent = data.view.contents;
           writingTitle = data.view.title;
         } catch (err) {
@@ -136,7 +152,7 @@
               removePlugins: ["EasyImage", "ImageUpload", "MediaEmbed"],
             });
 
-            editorInstance.setData(`<p>${boardContent}</p>`);
+            editorInstance.setData(`${boardContent}`);
           })();
         }
         document.getElementById("boardWritingButton").onclick = (e) => {
@@ -204,6 +220,32 @@
               withCredentials: true,
             })
           ).data;
+          let data3 = (
+            await axios({
+              method: "post",
+              url: `${reqHostPort}/b/category`,
+              data: { channel: channel },
+            })
+          ).data.category;
+          boardWritingContent = {
+            placeholder: data.channel.writePlaceholder,
+            categoryList: [],
+          };
+          if (Array.isArray(data3)) {
+            for (let item of data3) {
+              boardWritingContent.categoryList.push({
+                value: item.engTitle,
+                name: item.name,
+                selected: item.engTitle == category,
+              });
+            }
+          } else {
+            boardWritingContent.categoryList.push({
+              value: data3.engTitle,
+              name: data3.name,
+              selected: data3.engTitle == category,
+            });
+          }
           if (!writingUserInfo.userExists) {
             alert("비회원은 글작성이 불가능합니다!");
             window.location.replace(`${clientAddress}?channel=${channel}`);
@@ -215,17 +257,6 @@
           channelHref_writing = `${clientAddress}?channel=${channel}`;
           channelName_writing = data.channel.title;
           channelDescription_writing = data.channel.description;
-          boardWritingContent = {
-            placeholder: data.channel.writePlaceholder,
-            categoryList: [],
-          };
-          for (let item of data.category) {
-            boardWritingContent.categoryList.push({
-              value: item.engTitle,
-              name: item.name,
-              selected: item.engTitle == category,
-            });
-          }
         } catch (err) {
         } finally {
           document.getElementById("channelInfo").innerHTML = `
