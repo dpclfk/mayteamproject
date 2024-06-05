@@ -1,6 +1,6 @@
-#idForm {
-  /* display: none; */
-}
+/* #idForm {
+  display: none;
+} */
 
 .sideCut {
   display: flex;
@@ -29,8 +29,8 @@
   border: 0.5px solid rgba(0, 0, 0, 0.3);
 }
 
-.AgreementsBox::-webkit-scrollbar-button {
-}
+/* .AgreementsBox::-webkit-scrollbar-button {
+} */
 
 /* * {font-size:18px;} */
 /* body {padding: 200px;} */
