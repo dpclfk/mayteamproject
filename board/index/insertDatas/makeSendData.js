@@ -1,5 +1,5 @@
 const reqHostPort = "/api";
-const clientAddress = "http://3.38.105.195/";
+const clientAddress = "http://3.35.25.223/";
 let query;
 let cookie = {};
 (async () => {

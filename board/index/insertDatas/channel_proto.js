@@ -85,7 +85,8 @@
         url: `${reqHostPort}/b/category`,
         data: { channel: channel },
       })
-    ).data.category;
+    ).data;
+    console.log(data);
     if (Array.isArray(data)) {
       for (let item of data) {
         categoryList.push([

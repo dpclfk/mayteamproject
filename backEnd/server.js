@@ -31,9 +31,12 @@ app.use(cors({ origin: [/localhost\:?\d*/, /127.0.0.1\:?\d*/], credentials: true
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser("test"));
-app.use("/imgs", express.static("/Users/lee/Desktop/kga/teamproject_cloneCoding/backEnd/uploads"));
+app.use(
+  "/api/imgs",
+  express.static("/Users/lee/Desktop/kga/teamproject_cloneCoding/backEnd/uploads")
+);
 
-app.use(router);
+app.use("/api", router);
 const force = true;
 
 try {
